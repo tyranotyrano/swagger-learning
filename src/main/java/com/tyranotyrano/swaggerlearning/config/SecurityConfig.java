@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Override
-	public void configure(WebSecurity web) throws Exception {
+	public void configure(WebSecurity web) {
 		web.ignoring()
 		   .antMatchers("/swagger-ui/**",
 						"/swagger-resources/**",
@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.mvcMatchers("/").permitAll()
+			.mvcMatchers("/", "/tmp/**").permitAll()
 			.anyRequest().authenticated();
 		http.formLogin();
 		http.httpBasic();
