@@ -19,6 +19,8 @@ dependencies {
 	// Swagger
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
