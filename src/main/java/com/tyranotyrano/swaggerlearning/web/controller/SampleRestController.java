@@ -2,8 +2,12 @@ package com.tyranotyrano.swaggerlearning.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.tyranotyrano.swaggerlearning.web.rqrs.SampleRq;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -35,5 +39,11 @@ public class SampleRestController {
 	@GetMapping("/tmp/{id}")
 	public String readByPathVariable(@PathVariable("id") Long id) {
 		return "[GET] Read With Path Variable. id = " + id;
+	}
+
+	@ApiOperation("RQ 모델이 있는 POST 방식의 Rest API")
+	@PostMapping("/tmp")
+	public String readByRequestBody(@RequestBody SampleRq rq) {
+		return "[POST] Read With RequestBody. id = " + rq.getId();
 	}
 }

@@ -19,6 +19,10 @@ dependencies {
 	// Swagger
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 
+	// lombok
+	compileOnly 'org.projectlombok:lombok:1.18.6'
+	annotationProcessor 'org.projectlombok:lombok:1.18.6'
+
 	// Spring Security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
